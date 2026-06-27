@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetScan Pro</string>
+    <string name="btn_scan">[ SCAN ]</string>
+    <string name="btn_stop">[ STOP ]</string>
+    <string name="btn_export">[ EXPORT ]</string>
+    <string name="btn_start">[ START ]</string>
+    <string name="btn_history">[ HISTORIAL ]</string>
+    <string name="btn_clear">[ LIMPIAR ]</string>
+    <string name="label_subnet_sweep">SUBNET SWEEP</string>
+    <string name="label_ping_monitor">PING MONITOR</string>
+    <string name="label_no_wifi">sin conexión WiFi</string>
+    <string name="label_scanning">escaneando…</string>
+    <string name="label_timeout">TIMEOUT</string>
+    <string name="label_alive">ALIVE</string>
+    <string name="label_down">DOWN</string>
+    <string name="msg_exported">guardado en Descargas</string>
+    <string name="hint_ip">8.8.8.8 o google.com</string>
+</resources>
