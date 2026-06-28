@@ -83,7 +83,19 @@ public class ScanActivity extends AppCompatActivity {
                     int done = scanned.incrementAndGet();
                     if (reachable) alive.incrementAndGet();
 
+                    // Crear el host primero
                     HostModel host = new HostModel(ip, reachable, rtt);
+
+                    // Si está activo, resolver hostname en background
+                    if (reachable) {
+                        try {
+                            String name = InetAddress.getByName(ip).getHostName();
+                            // Solo asignar si resolvió algo distinto a la IP
+                            if (name != null && !name.equals(ip)) {
+                                host.setHostname(name);
+                            }
+                        } catch (Exception ignored) {}
+                    }
 
                     runOnUiThread(() -> {
                         if (reachable) adapter.addHost(host);
