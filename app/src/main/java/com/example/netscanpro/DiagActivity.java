@@ -63,6 +63,9 @@ public class DiagActivity extends AppCompatActivity {
         ((TextView)findViewById(android.R.id.content).getRootView().findViewWithTag("title_tag")).setTextColor(hackerGreen);
         btnStart.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#1a4d2e")));
         btnStart.setTextColor(hackerGreen);
+        
+        // Mostrar el prompt solo en modo hacker
+        findViewById(R.id.tvPrompt).setVisibility(android.view.View.VISIBLE);
     }
 
     private void setupChart() {

@@ -103,14 +103,11 @@ public class MainActivity extends AppCompatActivity {
         int accentColor = isHackerMode ? android.graphics.Color.parseColor("#39d353") : android.graphics.Color.parseColor("#D1D1D1");
 
         if (isHackerMode) {
-            // DISEÑO HACKER (LOCO LINUX)
+            // DISEÑO HACKER SIMPLIFICADO (LOCO LINUX)
             TextView tvRoot = new TextView(this);
-            tvRoot.setText("root@netscan-pro:~# ls -la /credits\n" +
-                          "total 4\n" +
-                          "drwxr-xr-x  2 root root  4096 Oct 2026 .\n" +
-                          "-rw-r--r--  1 root root   240 Oct 2026 AUTHORS\n" +
-                          "-rw-r--r--  1 root root   120 Oct 2026 DESCRIPTION\n\n" +
-                          "root@netscan-pro:~# vim AUTHORS");
+            tvRoot.setText("root@netscan-pro:~# ls /credits\n" +
+                          "AUTHORS  DESCRIPTION  VERSION\n\n" +
+                          "root@netscan-pro:~# cat AUTHORS");
             tvRoot.setTextColor(accentColor);
             tvRoot.setTypeface(android.graphics.Typeface.MONOSPACE);
             tvRoot.setTextSize(12);
