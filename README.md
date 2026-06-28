@@ -78,12 +78,8 @@ Interfaz alternativa de estilo terminal Linux para usuarios avanzados.
 - Gonzales Bruno
 - Portugal Aldeir
 
-## Docente
-
-- Olanda Claudio
-
 ---
 
 **Licencia**  
-Proyecto desarrollado con fines académicos bajo la licencia MIT. (cuidadito)
+Proyecto desarrollado con fines académicos bajo la licencia MIT.
 
