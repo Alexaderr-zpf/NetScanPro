@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Tema base dark — sin ActionBar -->
-    <style name="Base.Theme.Netscanpro"
-        parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Tema base dark — estilo terminal -->
+    <style name="Theme.Netscanpro" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <!-- Colores principales -->
+        <!-- Barra de estado (Batería, Hora) - NEGRO TERMINAL -->
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Barra de navegación (Botones de abajo) - NEGRO TERMINAL -->
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+
+        <!-- Colores principales: reemplazamos el morado por VERDE TERMINAL -->
         <item name="colorPrimary">@color/green_accent</item>
-        <item name="colorPrimaryVariant">@color/green_dim</item>
         <item name="colorOnPrimary">@color/bg_primary</item>
+
+        <!-- Colores secundarios: reemplazamos por AZUL TERMINAL -->
         <item name="colorSecondary">@color/blue_accent</item>
         <item name="colorOnSecondary">@color/bg_primary</item>
 
-        <!-- Fondo oscuro tipo terminal -->
+        <!-- Fondos y superficies -->
         <item name="android:windowBackground">@color/bg_primary</item>
         <item name="android:colorBackground">@color/bg_primary</item>
         <item name="colorSurface">@color/bg_surface</item>
         <item name="colorOnSurface">@color/text_primary</item>
 
-        <!-- Texto -->
+        <!-- Texto predeterminado -->
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_muted</item>
 
-        <!-- StatusBar y NavigationBar oscuros -->
-        <item name="android:statusBarColor">@color/bg_primary</item>
-        <item name="android:navigationBarColor">@color/bg_primary</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <!-- Forzar fuente monospace en toda la app -->
+        <item name="android:fontFamily">monospace</item>
 
     </style>
-
-    <style name="Theme.Netscanpro"
-        parent="Base.Theme.Netscanpro" />
 
 </resources>
