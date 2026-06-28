@@ -91,8 +91,9 @@ public class ScanActivity extends AppCompatActivity {
             final String ip = subnetBase + "." + i;
             executor.submit(() -> {
                 try {
+                    InetAddress addr = InetAddress.getByName(ip);
                     long start   = System.currentTimeMillis();
-                    boolean reachable = InetAddress.getByName(ip).isReachable(500);
+                    boolean reachable = addr.isReachable(500);
                     long rtt = System.currentTimeMillis() - start;
 
                     int done = scanned.incrementAndGet();
@@ -101,10 +102,17 @@ public class ScanActivity extends AppCompatActivity {
                     // Crear el host primero
                     HostModel host = new HostModel(ip, reachable, rtt);
 
-                    // Si está activo, resolver hostname en background
+                    // Si está activo, intentar resolver hostname con más agresividad
                     if (reachable) {
                         try {
-                            String name = InetAddress.getByName(ip).getHostName();
+                            // Intentamos obtener el nombre canónico (a veces más efectivo)
+                            String name = addr.getCanonicalHostName();
+                            
+                            // Si el nombre es igual a la IP, probamos con getHostName
+                            if (name.equals(ip)) {
+                                name = addr.getHostName();
+                            }
+
                             // Solo asignar si resolvió algo distinto a la IP
                             if (name != null && !name.equals(ip)) {
                                 host.setHostname(name);
