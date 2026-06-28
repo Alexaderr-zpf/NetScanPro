@@ -54,6 +54,21 @@ public class ScanActivity extends AppCompatActivity {
 
         btnScan.setOnClickListener(v -> startScan());
         btnExport.setOnClickListener(v -> exportResults());
+
+        if (getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false)) {
+            applyHackerTheme();
+        }
+    }
+
+    private void applyHackerTheme() {
+        int hackerGreen = android.graphics.Color.parseColor("#39d353");
+        tvStatus.setTextColor(hackerGreen);
+        progressBar.setProgressTintList(android.content.res.ColorStateList.valueOf(hackerGreen));
+        btnScan.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#1a4d2e")));
+        btnScan.setTextColor(hackerGreen);
+        btnExport.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#1a4d2e")));
+        btnExport.setTextColor(hackerGreen);
+        ((TextView)findViewById(android.R.id.content).getRootView().findViewWithTag("title_tag")).setTextColor(hackerGreen);
     }
 
     private void startScan() {

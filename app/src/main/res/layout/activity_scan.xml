@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NETSCAN // SUBNET SWEEP"
-        android:textColor="#39d353"
+        android:textColor="#D1D1D1"
+        android:tag="title_tag"
         android:fontFamily="monospace"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -41,8 +42,8 @@
             android:layout_weight="1"
             android:text="[ SCAN ]"
             android:fontFamily="monospace"
-            android:backgroundTint="#1a4d2e"
-            android:textColor="#39d353" />
+            android:backgroundTint="#161b22"
+            android:textColor="#D1D1D1" />
 
         <Button
             android:id="@+id/btnExport"
@@ -62,7 +63,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="6dp"
-        android:progressTint="#39d353"
+        android:progressTint="#D1D1D1"
         android:progressBackgroundTint="#21262d"
         android:max="254"
         android:paddingBottom="8dp" />

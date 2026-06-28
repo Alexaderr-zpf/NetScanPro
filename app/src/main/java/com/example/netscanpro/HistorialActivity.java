@@ -27,6 +27,15 @@ public class HistorialActivity extends AppCompatActivity {
             loadHistorial();
             Toast.makeText(this, "historial borrado", Toast.LENGTH_SHORT).show();
         });
+
+        if (getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false)) {
+            applyHackerTheme();
+        }
+    }
+
+    private void applyHackerTheme() {
+        int hackerGreen = android.graphics.Color.parseColor("#39d353");
+        ((TextView)findViewById(android.R.id.content).getRootView().findViewWithTag("title_tag")).setTextColor(hackerGreen);
     }
 
     private void loadHistorial() {

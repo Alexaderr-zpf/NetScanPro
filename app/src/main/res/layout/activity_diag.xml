@@ -11,24 +11,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NETSCAN // PING MONITOR"
-        android:textColor="#39d353"
+        android:textColor="#D1D1D1"
+        android:tag="title_tag"
         android:fontFamily="monospace"
         android:textSize="16sp"
         android:textStyle="bold"
         android:paddingBottom="12dp" />
 
-    <EditText
-        android:id="@+id/etTarget"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="8.8.8.8 o google.com"
-        android:fontFamily="monospace"
-        android:textColor="#c9d1d9"
-        android:textColorHint="#8b949e"
-        android:background="@android:color/transparent"
-        android:inputType="text"
+        android:orientation="horizontal"
         android:paddingBottom="8dp"
-        android:textSize="13sp" />
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user@android:~$ "
+            android:fontFamily="monospace"
+            android:textColor="#8b949e"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etTarget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="8.8.8.8"
+            android:fontFamily="monospace"
+            android:textColor="#c9d1d9"
+            android:textColorHint="#21262d"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize="13sp" />
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -49,8 +65,8 @@
             android:layout_weight="1"
             android:text="[ START ]"
             android:fontFamily="monospace"
-            android:backgroundTint="#1a4d2e"
-            android:textColor="#39d353" />
+            android:backgroundTint="#161b22"
+            android:textColor="#D1D1D1" />
 
         <Button
             android:id="@+id/btnStop"
@@ -76,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RTT: --"
-        android:textColor="#39d353"
+        android:textColor="#D1D1D1"
         android:fontFamily="monospace"
         android:textSize="22sp"
         android:textStyle="bold"

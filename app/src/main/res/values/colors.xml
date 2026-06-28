@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Fondos Soberios (Consola Linux) -->
+    <color name="bg_primary">#0d1117</color>
+    <color name="bg_surface">#161b22</color>
+    <color name="bg_border">#21262d</color>
 
-    <!-- Fondos -->
-    <color name="bg_primary">#0d1117</color>   negro principal
-    <color name="bg_surface">#161b22</color>   superficie cards
-    <color name="bg_border">#21262d</color>   bordes y divisores
+    <!-- Texto y Acentos (Gris Linux / Silver) -->
+    <color name="text_primary">#D1D1D1</color>
+    <color name="text_muted">#8b949e</color>
 
-    <!-- Texto -->
-    <color name="text_primary">#c9d1d9</color>  texto principal
-    <color name="text_muted">#8b949e</color>   texto secundario
+    <!-- Acentos Reemplazados (Verde -> Gris Claro) -->
+    <color name="green_accent">#D1D1D1</color>
+    <color name="green_dim">#2a2e33</color>
 
-    <!-- Acentos -->
-    <color name="green_accent">#39d353</color>  hosts activos / OK
-    <color name="green_dim">#1a4d2e</color>    fondo badge activo
-    <color name="blue_accent">#58a6ff</color>   RTT / info
-    <color name="red_accent">#f85149</color>    error / timeout / DOWN
-    <color name="yellow_accent">#e3b341</color>  advertencias
-
+    <!-- Mantenemos estos para funcionalidad -->
+    <color name="blue_accent">#58a6ff</color>
+    <color name="red_accent">#f85149</color>
 </resources>

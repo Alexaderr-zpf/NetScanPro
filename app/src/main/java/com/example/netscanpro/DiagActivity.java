@@ -52,6 +52,17 @@ public class DiagActivity extends AppCompatActivity {
         btnStart.setOnClickListener(v -> startPing());
         btnStop.setOnClickListener(v  -> stopPing());
         btnStop.setEnabled(false);
+
+        if (getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false)) {
+            applyHackerTheme();
+        }
+    }
+
+    private void applyHackerTheme() {
+        int hackerGreen = android.graphics.Color.parseColor("#39d353");
+        ((TextView)findViewById(android.R.id.content).getRootView().findViewWithTag("title_tag")).setTextColor(hackerGreen);
+        btnStart.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#1a4d2e")));
+        btnStart.setTextColor(hackerGreen);
     }
 
     private void setupChart() {
@@ -121,16 +132,28 @@ public class DiagActivity extends AppCompatActivity {
 
     private void updateChart(boolean ok, long rtt) {
         pingCount++;
+        int statusColor;
+        
         if (!ok) {
             lostCount++;
             tvLastRtt.setText("RTT: TIMEOUT");
-            tvLastRtt.setTextColor(Color.parseColor("#f85149"));
+            statusColor = Color.parseColor("#f85149"); // Rojo error
             rtt = 0;
         } else {
             totalRtt += rtt;
             tvLastRtt.setText("RTT: " + rtt + " ms");
-            tvLastRtt.setTextColor(Color.parseColor("#39d353"));
+            
+            // Lógica de colores dinámica por latencia
+            if (rtt < 50) {
+                statusColor = Color.parseColor("#39d353"); // Verde (Excelente)
+            } else if (rtt < 150) {
+                statusColor = Color.parseColor("#e3b341"); // Amarillo/Naranja (Medio)
+            } else {
+                statusColor = Color.parseColor("#f85149"); // Rojo (Pobre)
+            }
         }
+        
+        tvLastRtt.setTextColor(statusColor);
 
         long avg = (pingCount - lostCount) > 0 ? totalRtt / (pingCount - lostCount) : 0;
         tvAvg.setText("avg: " + avg + " ms");
@@ -140,11 +163,16 @@ public class DiagActivity extends AppCompatActivity {
         entries.add(new Entry(pingCount, rtt));
 
         LineDataSet dataSet = new LineDataSet(entries, "RTT");
-        dataSet.setColor(Color.parseColor("#39d353"));
+        dataSet.setColor(statusColor); // La línea cambia al color del último ping
         dataSet.setLineWidth(2f);
         dataSet.setDrawCircles(false);
         dataSet.setDrawValues(false);
         dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        
+        // Efecto degradado opcional para la línea (pro)
+        dataSet.setDrawFilled(true);
+        dataSet.setFillAlpha(20);
+        dataSet.setFillColor(statusColor);
 
         lineChart.setData(new LineData(dataSet));
         lineChart.notifyDataSetChanged();
