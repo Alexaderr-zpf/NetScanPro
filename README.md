@@ -1,22 +1,22 @@
 # NetScan Pro
 
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://www.java.com/)
-[![Android](https://img.shields.io/badge/Android-Android_Studio-blue)](https://developer.android.com/studio)
+[![Android](https://img.shields.io/badge/Android-14+-blue)](https://developer.android.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## Programación Básica para Redes
 
-**NetScan Pro** es una herramienta de diagnóstico de redes de grado profesional para Android, desarrollada íntegramente en **Java** con Android Studio. Destaca por su interfaz inspirada en consolas de administración y por sus potentes capacidades de análisis de infraestructura.
+**NetScan Pro** es una herramienta de diagnóstico de redes de grado profesional para Android, desarrollada íntegramente en **Java** con Android Studio. Su interfaz está inspirada en consolas de administración de sistemas, ofreciendo un análisis robusto y de alto rendimiento de la infraestructura de red local.
 
 ---
 
 ## 📋 Tabla de Contenidos
 - [Descripción](#resumen-técnico-del-proyecto)
-- [Funcionalidades](#funcionalidades-principales)
+- [Funcionalidades Principales](#funcionalidades-principales)
+- [Capturas de Pantalla](#capturas-de-pantalla)
 - [Modo Administrativo](#modo-administrativo)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Requisitos](#requisitos)
-- [Instalación](#instalación)
-- [Arquitectura](#arquitectura-de-archivos)
+- [Arquitectura](#arquitectura-del-proyecto)
 - [Autores](#autores)
 - [Docente](#docente)
 
@@ -24,41 +24,66 @@
 
 ## Resumen Técnico del Proyecto
 
-NetScan Pro es una herramienta de diagnóstico de redes de grado profesional para Android, desarrollada íntegramente en Java. Se distingue por su estética inspirada en consolas de administración y por sus potentes capacidades de análisis de infraestructura a alto rendimiento.
+NetScan Pro es una aplicación Android de diagnóstico de redes desarrollada en Java 17. Combina una interfaz moderna con capacidades avanzadas de escaneo, monitoreo en tiempo real y persistencia de datos.
 
 ## Funcionalidades Principales
 
-- **Barrido de Subred (Subnet Sweep)**: Auditoría de alta velocidad de las 254 direcciones IP de una subred /24 utilizando un `ExecutorService` con 50 hilos en paralelo.
-- **Resolución de Nombres (Hostname)**: Motor de descubrimiento que captura los nombres de los dispositivos en la red local cuando la infraestructura lo permite.
-- **Monitor de Latencia Dinámico**: Seguimiento en tiempo real con gráficas y sistema de codificación por colores (Verde <50ms, Amarillo <150ms, Rojo >150ms).
-- **Registro Histórico**: Persistencia local mediante SQLite.
-- **Exportación de Reportes**: Reportes detallados en formato `.txt` guardados en Descargas.
+- **Barrido de Subred**: Escaneo rápido de 254 direcciones IP (/24) con multihilo mediante `ExecutorService`.
+- **Resolución de Nombres de Host**: Descubrimiento automático de dispositivos en la red local.
+- **Monitor de Latencia Dinámico**: Gráficas en tiempo real con codificación por colores (Verde <50ms, Amarillo <150ms, Rojo >150ms).
+- **Registro Histórico**: Almacenamiento persistente mediante SQLite.
+- **Exportación de Reportes**: Generación de informes detallados en formato `.txt`.
 
-## Modo Administrativo (Administrative Mode)
+## Capturas de Pantalla
 
-Entorno visual alternativo para usuarios avanzados con estética de terminal Linux.
+*(Agrega aquí las imágenes una vez que tengas la carpeta `screenshots/`)*
 
-- Activación mediante patrón en el título principal.
-- Cambio de tema a Verde de Alta Visibilidad (`#39d353`).
-- Simulación de comandos de terminal (`user@android:~$`, `ls`, `cat`, `vim`, etc.).
-- Salida mediante presión prolongada (`exit`).
+![Pantalla Principal](screenshots/main_screen.png)
+![Escaneo de Red](screenshots/scan_screen.png)
+![Modo Administrativo](screenshots/admin_mode.png)
+
+## Modo Administrativo
+
+Interfaz alternativa de estilo terminal Linux para usuarios avanzados.
+
+- Activación mediante patrón en la pantalla principal.
+- Tema verde de alta visibilidad (`#39d353`).
+- Simulación de comandos de terminal.
+- Salida mediante presión prolongada.
 
 ## Tecnologías Utilizadas
 
 - **Lenguaje**: Java 17
 - **IDE**: Android Studio
 - **Base de Datos**: SQLite
-- **Hilos**: ExecutorService (Multithreading)
+- **Concurrency**: ExecutorService
 - **Interfaz**: XML Layouts + Custom Themes
-- **Gráficas**: Custom Views o MPAndroidChart (si aplica)
 
-## Requisitos
+## Arquitectura del Proyecto
+      app/
+      ├── java/com/netscanpro/
+      │   ├── MainActivity.java
+      │   ├── ScanActivity.java
+      │   ├── DiagActivity.java
+      │   ├── NetworkUtils.java
+      │   └── ScanDatabase.java
+      └── res/
+      └── values/themes.xml
 
-- Android 8.0 (Oreo) o superior
-- Permisos: `INTERNET`, `ACCESS_NETWORK_STATE`, `ACCESS_WIFI_STATE`
+## Autores
 
-## Instalación
+- Arcos Alexander
+- Valdivia Roger
+- Mansillas Jhordan
+- Gonzales Bruno
+- Portugal Aldeir
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/netscan-pro.git
+## Docente
+
+- Olanda Claudio
+
+---
+
+**Licencia**  
+Proyecto desarrollado con fines académicos bajo la licencia MIT. (cuidadito)
+
