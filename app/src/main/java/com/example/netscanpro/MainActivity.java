@@ -1,24 +1,41 @@
 package com.example.netscanpro;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView tvIpInfo;
+    private Button   btnScan, btnDiag, btnHistorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        tvIpInfo     = findViewById(R.id.tvIpInfo);
+        btnScan      = findViewById(R.id.btnScan);
+        btnDiag      = findViewById(R.id.btnDiag);
+        btnHistorial = findViewById(R.id.btnHistorial);
+
+        String ip     = NetworkUtils.getLocalIp(this);
+        String subnet = NetworkUtils.getSubnetBase(this);
+        if (ip != null) {
+            tvIpInfo.setText("ip: " + ip + "  |  subnet: " + subnet + ".0/24");
+        } else {
+            tvIpInfo.setText("[ sin conexión WiFi ]");
+        }
+
+        btnScan.setOnClickListener(v ->
+            startActivity(new Intent(this, ScanActivity.class)));
+
+        btnDiag.setOnClickListener(v ->
+            startActivity(new Intent(this, DiagActivity.class)));
+
+        btnHistorial.setOnClickListener(v ->
+            startActivity(new Intent(this, HistorialActivity.class)));
     }
 }

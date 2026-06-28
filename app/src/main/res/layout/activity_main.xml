@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#0d1117"
+    android:gravity="center"
+    android:padding="32dp">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NETSCAN PRO"
+        android:textColor="#39d353"
+        android:fontFamily="monospace"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="network diagnostic tool v1.0"
+        android:textColor="#8b949e"
+        android:fontFamily="monospace"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:paddingBottom="32dp" />
+
+    <TextView
+        android:id="@+id/tvIpInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detectando red..."
+        android:textColor="#58a6ff"
+        android:fontFamily="monospace"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:paddingBottom="40dp" />
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="[ SUBNET SWEEP ]"
+        android:fontFamily="monospace"
+        android:textSize="14sp"
+        android:backgroundTint="#1a4d2e"
+        android:textColor="#39d353"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnDiag"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="[ PING MONITOR ]"
+        android:fontFamily="monospace"
+        android:textSize="14sp"
+        android:backgroundTint="#21262d"
+        android:textColor="#58a6ff"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnHistorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="[ HISTORIAL ]"
+        android:fontFamily="monospace"
+        android:textSize="11sp"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="#8b949e" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

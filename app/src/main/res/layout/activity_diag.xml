@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0d1117"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NETSCAN // PING MONITOR"
+        android:textColor="#39d353"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="8.8.8.8 o google.com"
+        android:fontFamily="monospace"
+        android:textColor="#c9d1d9"
+        android:textColorHint="#8b949e"
+        android:background="@android:color/transparent"
+        android:inputType="text"
+        android:paddingBottom="8dp"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21262d"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="[ START ]"
+            android:fontFamily="monospace"
+            android:backgroundTint="#1a4d2e"
+            android:textColor="#39d353" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="[ STOP ]"
+            android:fontFamily="monospace"
+            android:backgroundTint="#3d1f1f"
+            android:textColor="#f85149" />
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvLastRtt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RTT: --"
+        android:textColor="#39d353"
+        android:fontFamily="monospace"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvAvg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="avg: -- ms"
+        android:textColor="#58a6ff"
+        android:fontFamily="monospace"
+        android:textSize="13sp"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="enviados: 0  perdidos: 0"
+        android:textColor="#8b949e"
+        android:fontFamily="monospace"
+        android:textSize="12sp" />
+
+</LinearLayout>
