@@ -18,7 +18,6 @@
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Arquitectura](#arquitectura-del-proyecto)
 - [Autores](#autores)
-- [Docente](#docente)
 
 ---
 
