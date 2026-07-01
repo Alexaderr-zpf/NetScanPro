@@ -1,7 +1,9 @@
-# NetScan Pro
 <p align="center">
   <img src="screenshots/icon.png" width="120" alt="NetScan Pro Icon">
 </p>
+
+---
+# NetScan Pro
 
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://www.java.com/)
 [![Android](https://img.shields.io/badge/Android-14+-blue)](https://developer.android.com/)
