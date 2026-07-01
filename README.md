@@ -33,9 +33,9 @@ NetScan Pro es una aplicación Android de diagnóstico de redes desarrollada en 
 ## Capturas de Pantalla
 
 <p align="center">
-  <img src="screenshots/main_screen.jpg" width="350" alt="Pantalla Principal">
-  <img src="screenshots/scan_screen.jpg" width="350" alt="Escaneo de Red">
-  <img src="screenshots/latency_graph.jpg" width="350" alt="Monitor de Latencia">
+  <img src="screenshots/main_screen.jpg" width="300" alt="Pantalla Principal">
+  <img src="screenshots/scan_screen.jpg" width="300" alt="Escaneo de Red">
+  <img src="screenshots/latency_graph.jpg" width="300" alt="Monitor de Latencia">
 </p>
 
 ## Tecnologías Utilizadas
