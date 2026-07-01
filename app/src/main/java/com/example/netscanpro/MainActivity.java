@@ -41,26 +41,24 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.tvCredits).setOnClickListener(v -> showCredits());
 
-        // Para desactivar el modo hacker: Mantener presionado CREDITS (comando exit)
-        findViewById(R.id.tvCredits).setOnLongClickListener(v -> {
+         findViewById(R.id.tvCredits).setOnLongClickListener(v -> {
             if (getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false)) {
                 android.widget.Toast.makeText(this, "root@android:~$ exit\n[ logging out... ]", android.widget.Toast.LENGTH_SHORT).show();
                 getSharedPreferences("theme_prefs", MODE_PRIVATE).edit().putBoolean("hacker_mode", false).apply();
                 
-                // Reiniciar para volver a la normalidad (Gris Linux)
+                
                 recreate();
                 return true;
             }
             return false;
         });
 
-        // Verificar si el modo hacker ya estaba activo
+        
         if (getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false)) {
             applyHackerTheme();
         }
 
-        // Easter Egg: Sudo Mode (7 taps)
-        findViewById(R.id.tvTitle).setOnClickListener(new android.view.View.OnClickListener() {
+         findViewById(R.id.tvTitle).setOnClickListener(new android.view.View.OnClickListener() {
             int taps = 0;
             @Override
             public void onClick(android.view.View v) {
@@ -98,12 +96,11 @@ public class MainActivity extends AppCompatActivity {
         layout.setBackgroundColor(android.graphics.Color.parseColor("#0d1117"));
         layout.setPadding(60, 60, 60, 60);
 
-        // Detectar si estamos en modo hacker
-        boolean isHackerMode = getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false);
+         getSharedPreferences("theme_prefs", MODE_PRIVATE).getBoolean("hacker_mode", false);
         int accentColor = isHackerMode ? android.graphics.Color.parseColor("#39d353") : android.graphics.Color.parseColor("#D1D1D1");
 
         if (isHackerMode) {
-            // DISEÑO HACKER SIMPLIFICADO (LOCO LINUX)
+            
             TextView tvRoot = new TextView(this);
             tvRoot.setText("root@netscan-pro:~# ls /credits\n" +
                           "AUTHORS  DESCRIPTION  VERSION\n\n" +
@@ -148,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             layout.addView(tvVersion);
 
         } else {
-            // DISEÑO NORMAL (SOBRIO)
+            // DISEÑO NORMAL 
             TextView header = new TextView(this);
             header.setText(">>> CREDITS <<<");
             header.setTextColor(accentColor);
