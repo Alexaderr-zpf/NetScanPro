@@ -64,7 +64,7 @@ public class DiagActivity extends AppCompatActivity {
         btnStart.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#1a4d2e")));
         btnStart.setTextColor(hackerGreen);
         
-        // Mostrar el prompt solo en modo hacker
+        // Mostrar el prompt solo en modo secreto
         findViewById(R.id.tvPrompt).setVisibility(android.view.View.VISIBLE);
     }
 
@@ -172,7 +172,7 @@ public class DiagActivity extends AppCompatActivity {
         dataSet.setDrawValues(false);
         dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         
-        // Efecto degradado opcional para la línea (pro)
+    
         dataSet.setDrawFilled(true);
         dataSet.setFillAlpha(20);
         dataSet.setFillColor(statusColor);
