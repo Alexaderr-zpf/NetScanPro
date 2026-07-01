@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/icon.png" width="120" alt="NetScan Pro Icon">
+  <img src="screenshots/icon.png" width="150" alt="NetScan Pro Icon">
 </p>
 
 ---
