@@ -9,7 +9,6 @@
 [![Android](https://img.shields.io/badge/Android-14+-blue)](https://developer.android.com/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Programación Básica para Redes
 
 **NetScan Pro** es una herramienta de diagnóstico de redes para Android, desarrollada íntegramente en **Java** con Android Studio.
 
