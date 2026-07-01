@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Centro -->
+    <path
+        android:fillColor="#D1D1D1"
+        android:pathData="M54,54m-9,0a9,9 0 1,1 18,0a9,9 0 1,1 -18,0" />
+
+    <!-- Círculo interno decorativo -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,54m-16,0a16,16 0 1,1 32,0a16,16 0 1,1 -32,0"
+        android:strokeAlpha="0.25"
+        android:strokeColor="#D1D1D1"
+        android:strokeWidth="1.5" />
+
+    <!-- Señales del Radar -->
+
+    <!-- Señal 1 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,45Q54,22 46,14"
+        android:strokeAlpha="0.9"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.8"
+        android:fillColor="#D1D1D1"
+        android:pathData="M46,14m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Señal 2 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M61,48Q76,30 88,22"
+        android:strokeAlpha="0.75"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.7"
+        android:fillColor="#D1D1D1"
+        android:pathData="M88,22m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Señal 3 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M63,54Q82,50 94,54"
+        android:strokeAlpha="0.6"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.55"
+        android:fillColor="#D1D1D1"
+        android:pathData="M94,54m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Señal 4 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M61,60Q74,74 82,86"
+        android:strokeAlpha="0.45"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.4"
+        android:fillColor="#D1D1D1"
+        android:pathData="M82,86m-3,0a3,3 0 1,1 6,0a3,3 0 1,1 -6,0" />
+
+    <!-- Señal 5 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,63Q58,80 54,92"
+        android:strokeAlpha="0.35"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.3"
+        android:fillColor="#D1D1D1"
+        android:pathData="M54,92m-3,0a3,3 0 1,1 6,0a3,3 0 1,1 -6,0" />
+
+    <!-- Señal 6 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M45,54Q28,46 16,50"
+        android:strokeAlpha="0.6"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.55"
+        android:fillColor="#D1D1D1"
+        android:pathData="M16,50m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Señal 7 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M47,47Q34,32 22,24"
+        android:strokeAlpha="0.75"
+        android:strokeColor="#D1D1D1"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+    <path
+        android:fillAlpha="0.7"
+        android:fillColor="#D1D1D1"
+        android:pathData="M22,24m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+</vector>

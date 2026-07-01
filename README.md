@@ -1,85 +1,45 @@
-# NetScan Pro
+# NetScan Pro - Herramienta de Diagnóstico de Redes
 
-[![Java](https://img.shields.io/badge/Java-17-orange)](https://www.java.com/)
-[![Android](https://img.shields.io/badge/Android-14+-blue)](https://developer.android.com/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+NetScan Pro es una aplicación nativa para Android desarrollada en **Java**, diseñada para administradores de sistemas y profesionales de redes. Ofrece una interfaz técnica inspirada en consolas Linux y capacidades de análisis de infraestructura de alto rendimiento.
 
-## Programación Básica para Redes
+## 🚀 Características Principales
 
-**NetScan Pro** es una herramienta de diagnóstico de redes de grado profesional para Android, desarrollada íntegramente en **Java** con Android Studio. Su interfaz está inspirada en consolas de administración de sistemas, ofreciendo un análisis robusto y de alto rendimiento de la infraestructura de red local.
+### 1. Exploración de Subred (Subnet Sweep)
+*   **Escaneo Paralelo**: Utiliza un `ExecutorService` con 50 hilos concurrentes para auditar una subred /24 en segundos.
+*   **Identificación Avanzada**: Resuelve direcciones IP y captura el `hostname` (nombre del dispositivo) mediante consultas DNS locales dinámicas.
+*   **Exportación de Datos**: Genera reportes técnicos detallados en formato `.txt` almacenados en el directorio público de Descargas.
 
----
+### 2. Monitor de Latencia (Ping Monitor)
+*   **Telemetría en Tiempo Real**: Visualización dinámica mediante `LineChart` (MPAndroidChart) para detectar micro-cortes o congestión.
+*   **Codificación por Colores (Semáforo)**:
+    *   🟢 **Óptimo**: < 50ms
+    *   🟡 **Moderado**: 50ms - 150ms
+    *   🔴 **Crítico/Timeout**: > 150ms
 
-## 📋 Tabla de Contenidos
-- [Descripción](#resumen-técnico-del-proyecto)
-- [Funcionalidades Principales](#funcionalidades-principales)
-- [Capturas de Pantalla](#capturas-de-pantalla)
-- [Modo Administrativo](#modo-administrativo)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Arquitectura](#arquitectura-del-proyecto)
-- [Autores](#autores)
+### 3. Gestión de Auditorías (Historial)
+*   **Persistencia Local**: Base de datos **SQLite** integrada para el registro histórico de escaneos realizados.
+*   **Control Total**: Permite visualizar y realizar limpiezas periódicas de los registros de auditoría.
 
----
+## 🛠️ Detalles Técnicos y Arquitectura
 
-## Resumen Técnico del Proyecto
+### Interfaz de Usuario (UI/UX)
+*   **Aesthetic Linux Console**: Esquema de colores Gris Plata (#D1D1D1) sobre Negro Profundo (#0d1117) para maximizar el contraste.
+*   **Tipografía**: Optimizada para lectura de logs y datos técnicos.
+*   **Iconografía Adaptativa**: Sistema 100% vectorial (Vector Drawables) para asegurar nitidez absoluta en cualquier densidad de pantalla (xxxhdpi).
 
-NetScan Pro es una aplicación Android de diagnóstico de redes desarrollada en Java 17. Combina una interfaz moderna con capacidades avanzadas de escaneo, monitoreo en tiempo real y persistencia de datos.
+### Sistema de Atajos de Visualización (Administrative Mode)
+La herramienta incluye una capa avanzada de visualización para operarios de red:
+*   **Activación**: Patrón de interacción técnico mediante múltiples taps en la cabecera principal.
+*   **Persistencia**: Estado global gestionado mediante `SharedPreferences`.
+*   **Transformación**: Cambio dinámico del entorno al color verde hacker y desbloqueo de consola de créditos interactiva con comandos shell (`ls`, `cat`, `vim`, `exit`).
 
-## Funcionalidades Principales
+## 📁 Estructura del Proyecto
 
-- **Barrido de Subred**: Escaneo rápido de 254 direcciones IP (/24) con multihilo mediante `ExecutorService`.
-- **Resolución de Nombres de Host**: Descubrimiento automático de dispositivos en la red local.
-- **Monitor de Latencia Dinámico**: Gráficas en tiempo real con codificación por colores (Verde <50ms, Amarillo <150ms, Rojo >150ms).
-- **Registro Histórico**: Almacenamiento persistente mediante SQLite.
-- **Exportación de Reportes**: Generación de informes detallados en formato `.txt`.
-
-## Capturas de Pantalla
-
-<p align="center">
-  <img src="screenshots/main_screen.jpg" width="200" alt="Pantalla Principal">
-  <img src="screenshots/scan_screen.jpg" width="200" alt="Escaneo de Red">
-  <img src="screenshots/latency_graph.jpg" width="200" alt="Monitor de Latencia">
-</p>
-
-
-## Modo Administrativo
-
-Interfaz alternativa de estilo terminal Linux para usuarios avanzados.
-
-- Activación mediante patrón en la pantalla principal.
-- Tema verde de alta visibilidad (`#39d353`).
-- Simulación de comandos de terminal.
-- Salida mediante presión prolongada.
-
-## Tecnologías Utilizadas
-
-- **Lenguaje**: Java 17
-- **IDE**: Android Studio
-- **Base de Datos**: SQLite
-- **Concurrency**: ExecutorService
-- **Interfaz**: XML Layouts + Custom Themes
-
-## Arquitectura del Proyecto
-      app/
-      ├── java/com/netscanpro/
-      │   ├── MainActivity.java
-      │   ├── ScanActivity.java
-      │   ├── DiagActivity.java
-      │   ├── NetworkUtils.java
-      │   └── ScanDatabase.java
-      └── res/
-      └── values/themes.xml
-
-## Autores
-
-- Arcos Alexander
-- Valdivia Roger
-- Mansillas Jhordan
-- Gonzales Bruno
-- Portugal Aldeir
+*   `NetworkUtils.java`: Motor de detección de infraestructura local.
+*   `ScanDatabase.java`: Gestor de persistencia SQLite.
+*   `HostAdapter.java`: Adaptador optimizado para listas de alta densidad.
+*   `MainActivity.java`: Controlador de navegación y lógica de entorno.
 
 ---
-
-**Licencia**  
-Proyecto desarrollado con fines académicos bajo la licencia MIT.
-
+**Proyecto Final de Programación Móvil para Redes - 2026**
+*Desarrollado con estándares de ingeniería de software para entornos de red profesionales.*

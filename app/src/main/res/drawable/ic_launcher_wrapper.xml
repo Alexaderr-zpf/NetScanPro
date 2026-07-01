@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- El padding de 15dp asegura que el logo vectorizado no se corte por el zoom de Android -->
+    <item
+        android:drawable="@drawable/ic_launcher_foreground_vector"
+        android:bottom="15dp"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="15dp" />
+</layer-list>
